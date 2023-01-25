@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Ball</title>
+    <style>
+        :root {
+            --lightBrown : #e6e3e4;
+            --lightBlue : #bdd4f1;
+            --brown : #baa287;
+            --lightGray : #7c8584;
+            --darkBlue : #121b28;
+        }
+
+        body{
+            overflow-y: hidden;
+            background: var(--darkBlue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-height: 100vh;
+        }
+        .container{
+            position: absolute;
+            width: 12.5rem;
+            height: 12.5rem;
+            animation-fill-mode: forwards;
+            animation-name: colourround;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition-timing-function: linear;
+        }
+
+        @keyframes colourround {
+            0% {
+                background-color: var(--lightBrown);
+            }
+            25% {
+                background-color: var(--lightBlue);
+                transform: translate3d(0, -12.5rem, 0);
+            }
+            50% {
+                background-color: var(--brown);
+                border-radius: 50%;
+                transform: translate3d(0, 0, 0);
+            }
+            75% {
+                background-color: var(--lightGray);
+                transform: translate3d(0, 12.5rem, 0);
+            }
+            100% {
+                background-color: var(--lightBrown);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <dvi class="container"></dvi>
+</body>
+</html>
